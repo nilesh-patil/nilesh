@@ -1,0 +1,11 @@
+[workspace]
+authors = ["Nilesh <4813079+nilesh-patil@users.noreply.github.com>"]
+channels = ["conda-forge"]
+name = "nilesh"
+platforms = ["osx-arm64"]
+version = "0.1.0"
+
+[tasks]
+
+[dependencies]
+ruby = ">=3.4.4,<4"
