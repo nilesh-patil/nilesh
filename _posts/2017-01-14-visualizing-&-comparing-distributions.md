@@ -1,30 +1,26 @@
 ---
-layout: post
 title: "Visualizing distributions"
-comments: true
-modified:
+date: 2017-01-14T15:39:55-04:00
 categories: blog
 excerpt: 'Common visualization examples for distributions'
 tags: 
     - data
-    - distribution
+    - distributions
     - visualization
-    - seaborn
-image:
-  feature:
-date: 2017-01-14T15:39:55-04:00
-modified: 2017-01-14T14:19:19-04:00
 ---
 
-###### Sections
+## Sections
 
-- [1. Histogram](#histogram)
-- [2. Scatter plot](#scatter-plot)
-- [3. Density plot](#density-plot)
-- [4. Boxplot](#boxplot)
-- [5. Violin-plot](#violin-plot)
-- [6. Heatmap](#heatmap)
-- [7. Rugs](#rugs)
+- [Sections](#sections)
+  - [Connect to data:](#connect-to-data)
+  - [Basic Visualisations](#basic-visualisations)
+    - [Histogram:](#histogram)
+    - [Scatter Plot:](#scatter-plot)=
+    - [Density plot:](#density-plot)
+    - [Boxplot:](#boxplot)
+    - [Violin plot:](#violin-plot)
+    - [Heatmap:](#heatmap)
+    - [Rugs:](#rugs)
 
 Once you have your data, usually you start by building summaries, checking for outliers, anomalies in the data & visualizing it from different angles. Here, we'll look at a few common approaches to visualize distributions (in a highly general sense).
 
@@ -52,7 +48,9 @@ data_indicators = pd.read_sql_query('select * from Indicators',conn)
 
 ```
 
-### Histogram:
+### Basic Visualisations
+
+#### Histogram:
 
 ##### Data Prep
 
