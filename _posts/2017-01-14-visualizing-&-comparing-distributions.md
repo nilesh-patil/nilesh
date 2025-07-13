@@ -12,20 +12,20 @@ tags:
 ## Sections
 
 - [Sections](#sections)
-  - [Connect to data:](#connect-to-data)
+  - [Connect to data](#connect-to-data)
   - [Basic Visualisations](#basic-visualisations)
-    - [Histogram:](#histogram)
-    - [Scatter Plot:](#scatter-plot)
-    - [Density plot:](#density-plot)
-    - [Boxplot:](#boxplot)
-    - [Violin plot:](#violin-plot)
-    - [Heatmap:](#heatmap)
-    - [Rugs:](#rugs)
+    - [Histogram](#histogram)
+    - [Scatter Plot](#scatter-plot)
+    - [Density plot](#density-plot)
+    - [Boxplot](#boxplot)
+    - [Violin plot](#violin-plot)
+    - [Heatmap](#heatmap)
+    - [Rugs](#rugs)
 
 Once you have your data, usually you start by building summaries, checking for outliers, anomalies in the data & visualizing it from different angles. Here, we'll look at a few common approaches to visualize distributions (in a highly general sense).
 
 
-### Connect to data:
+### Connect to data :
 
 ```python
 %pylab inline
@@ -48,7 +48,7 @@ data_indicators = pd.read_sql_query('select * from Indicators',conn)
 
 ```
 
-### Basic Visualisations
+### Basic Visualisations :
 
 #### Histogram:
 
@@ -94,7 +94,7 @@ plt.title('Life expectancy at birth ( In years )')
 ![Histogram](\images\blog\distributions\01.histogram.png){: .center-image height="300px" width="850px"}
 
 
-### Scatter Plot:
+### Scatter Plot :
 
 ##### Data Prep
 ```python
@@ -138,7 +138,7 @@ plt.savefig('./plots/02.scatter.png',orientation='landscape',dpi=500);
 ![png](\images\blog\distributions\02.scatter.png){: .center-image height="500px" width="750px"}
 
 
-### Density plot:
+### Density plot :
 
 ##### Data Prep
 ```python
@@ -184,7 +184,7 @@ plt.savefig('./03.density.png');
 ![png](\images\blog\distributions\03.density.png){: .center-image height="500px" width="750px"}
 
 
-### Boxplot:
+### Boxplot :
 
 ##### Data prep
 ```python
@@ -232,7 +232,7 @@ plt.savefig('./04.boxplot.png');
 ![png](\images\blog\distributions\04.boxplot.png){: .center-image height="500px" width="950px"}
 
 
-### Violin plot:
+### Violin plot :
 
 ##### Data prep
 
@@ -287,7 +287,7 @@ plt.savefig('./plots/05.violinplot.png', dpi=250, bbox_inches='tight');
 
 ![png](\images\blog\distributions\05.violinplot.png){: .center-image height="750px" width="950px"}
 
-### Heatmap:
+### Heatmap :
 
 
 ##### Data prep
@@ -381,7 +381,7 @@ plt.savefig('./plots/06.heatmap.png', dpi=250, bbox_inches='tight');
 ![png](\images\blog\distributions\06.heatmap.png){: .center-image height="500px" width="1000px"}
 
 
-### Rugs:
+### Rugs :
 
 ##### Data prep
 

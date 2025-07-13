@@ -21,37 +21,38 @@ image:
 - [Model](#model)
   - [Step-by-step process](#step-by-step-process)
 - [Analysis and Results](#analysis-and-results)
-  - [References](#references)
+- [References](#references)
 
-### Introduction:
+### Introduction :
 
 A modern smartphone comes equipped with variety of sensors from motion detectors to optical calibrators. The data collected by these sensors is valuable for better aligning the applications on the phone with user’s lifestyle. In this project, we have focused on using data collected from motion sensors to build a model which identifies type of activity being performed with minimal computation involved. The end goal is to create a model which can classify the activity being performed with high accuracy without sacrificing the limited computational resources available on a single phone.
 
 The project is hosted here: [Github](https://github.com/nilesh-patil/HumanActivityRecognition)
 
-### Data Collection and Preparation:
+### Data Collection and Preparation :
 
 We used the data provided by Human Activity Recognition research project, which built this database from the recordings of 30 subjects performing activities of daily living (ADL) while carrying a waist-mounted smartphone with embedded inertial sensors. The complete data & related papers can be accessed at: [UCI ML repository page](https://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones)
 
 Data was collected for 30 volunteers whose age was between 19-48 years. Each record in the data represents information about features like acceleration along x,y,z axes, velocity along a,y,z axes, 561 attributes derived from these basic measurements, identifier variable for the user & the activity being performed.
 
-There are 6 categories of activities being performed:
- 1. 'standing'
- 2. 'sitting'
- 3. 'laying'
- 4. 'walka)
- 5. 'walkdown'
- 6. 'walkup'
+There are 6 categories of activities being performed :
 
-The raw db)ta has separate text files for most of the variable groups & we have used the dataset that was saved as RData file. In this dataset, a single column(‘subject’) is used to identify a user and the last column(‘activity’) was used to identify the activity being performed when the measurements were taken. All other attributes are available in the same column oriented data format. This is important to know, because, the values in the dataset have been normalized.
+ 1. `standing`
+ 2. `sitting`
+ 3. `laying`
+ 4. `walking`
+ 5. `walkdown`
+ 6. `walkup`
 
-### Exploratory Analysis:
+The raw data has separate text files for most of the variable groups & we have used the dataset that was saved as RData file. In this dataset, a single column(‘subject’) is used to identify a user and the last column(‘activity’) was used to identify the activity being performed when the measurements were taken. All other attributes are available in the same column oriented data format. This is important to know, because, the values in the dataset have been normalized.
 
-  - *High dimensionality:*
+### Exploratory Analysis :
+
+  - *High dimensionality :*
 
 The dataset contains 561 features and we started out by exploring how these are related to each other & whether there are some which can be safely ignored for our problem.
 
-  - *Correlation Check:*
+  - *Correlation Check :*
 
 We built a correlation matrix for all 561 variables in one got to identify any apparent patterns in the relationships. We see that most of these features are highly correlated with each other and it’s a good decision to drop most of these highly correlated features since we can get the same information from some other feature with high correlation to a group of them.
 
@@ -60,15 +61,15 @@ We built a correlation matrix for all 561 variables in one got to identify any a
 	<figcaption>Fig 01. Correlation Matrix between all 561 features</figcaption>
 </figure></center>
 
-  - *Variance Check:*
+  - *Variance Check :*
 
 We checked our variable for zero or low variance so that they can be removed before running any analysis. Variables which do not change have low variance and ‘ll eventually have smaller impact on the classification model itself.
 
-  - *Missing value Check:*
+  - *Missing value Check :*
 
 We checked for any missing values in our columns, which might lead to errors in any future analysis but didn’t find any and so proceeded with the complete dataset.
 
-  - *Visual exploration:*
+  - *Visual exploration :*
 
 We also started out with basic visual exploration of the dataset by plotting distributions for the variables for each category, but given the large number involved, we dropped the idea. Though, in general there are two distinct major groups which we can see through the distributions as shown in:
 
@@ -77,7 +78,7 @@ We also started out with basic visual exploration of the dataset by plotting dis
 	<figcaption>Representative distribution</figcaption>
 </figure></center>
 
-### Model:
+### Model :
 
 The first step was to create a train & test set. We split our data into two sets in 7:3 ratios by random sampling without replacement. This ensures that our train & test sets are representative of the complete dataset. Another approach to do it would be to do this sampling for each output class. In our case, the result wasn’t significantly different.
 
@@ -91,7 +92,7 @@ We used Random forest variable importance scores to determine the final variable
 
 We started out with all 561 variables & reduced the total features to 5 in our final model. The focus of our process was to follow a algorithmic approach instead of a domain knowledge based model building process & hence we relied on oob score & variable importance to determine the optimal number of features, trees to be used & which features to use.
 
-#### Step-by-step process:
+#### Step-by-step process :
 
     1. Set RandomState = 42
 
@@ -130,17 +131,17 @@ We started out with all 561 variables & reduced the total features to 5 in our f
 
 The only major assumption in our choice of algorithm (RandomForest) is that random forests don’t usually overfit training set. This assumption breaks down when the training dataset is extremely biased, but in our case its relatively balanced & hence we choose it over other algorithms.
 
-### Analysis and Results:
+### Analysis and Results :
 
-*1. Important Features:*
+- **1. Important Features :**
 
 Using the previously described feature selection, we determined that the following features were important for building our classification model:
 
-  - angle(X,gravityMean)
-  - tGravityAcc-mean()-Y
-  - tGravityAcc-min()-X
-  - tGravityAcc-max()-X
-  - tBodyAcc-mad()-X
+  - `angle(X,gravityMean)`
+  - `tGravityAcc-mean()-Y`
+  - `tGravityAcc-min()-X`
+  - `tGravityAcc-max()-X`
+  - `tBodyAcc-mad()-X`
 
 The final model had importance scores are as shown in the figure:
 
@@ -149,7 +150,7 @@ The final model had importance scores are as shown in the figure:
 	<figcaption>Scores</figcaption>
 </figure></center>
 
-*2. ML Algorithms*
+- **2. ML Algorithms**
 We used SVM & RandomForest for the final model & their accuracy scores along with confusion matrices are as shown :
 
 
@@ -174,7 +175,7 @@ We used SVM & RandomForest for the final model & their accuracy scores along wit
 </center>
 
 
-3. Given the high score we get on test dataset, we are confident in using RandomForest based model for deticting human activity from smartphone dataset.
+1. Given the high score we get on test dataset, we are confident in using RandomForest based model for deticting human activity from smartphone dataset.
 
 
 4. From the final model, we also see that some categories are fairly straightforward to classify compared to others. We have shown this using a scatterplot matrix colored by category as shown the figure:
@@ -183,7 +184,9 @@ We used SVM & RandomForest for the final model & their accuracy scores along wit
 	<figcaption>Fig 04. Distribution of tBodyAccJerk-std()-X across all 6 categories</figcaption>
 </figure></center>
 
-#### References:
+---
+
+### References :
 
 *Random Forest:*
 
