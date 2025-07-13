@@ -15,7 +15,7 @@ tags:
   - [Connect to data:](#connect-to-data)
   - [Basic Visualisations](#basic-visualisations)
     - [Histogram:](#histogram)
-    - [Scatter Plot:](#scatter-plot)=
+    - [Scatter Plot:](#scatter-plot)
     - [Density plot:](#density-plot)
     - [Boxplot:](#boxplot)
     - [Violin plot:](#violin-plot)
