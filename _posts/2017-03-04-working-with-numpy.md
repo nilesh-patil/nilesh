@@ -35,7 +35,7 @@ import numpy as np
 
 ### Vectors
 
-#### Create vectors by generating different sequence of numbers
+#### Create vectors by generating different sequence of numbers : $\vec{V} = [a, b, c, d, e, . . . . . ]$
 
 
 ```python
@@ -71,7 +71,7 @@ print(x)
 
 #### Single vector operations
 
-- Sum of a sequence : $$Sum = \displaystyle\sum_{i=1}^{n} x_i$$
+- Sum of a sequence : $Sum = \displaystyle\sum_{i=1}^{n} x_i$
 
 
 ```python
@@ -80,7 +80,7 @@ x.sum()
     30
 
 
-- Adding a constant to each element of vector : $$x_{i_{new}} = \displaystyle x_i+c$$
+- Adding a constant to each element of vector : $x_{i_{new}} = \displaystyle x_i+c$
 
 
 ```python
@@ -91,18 +91,17 @@ print(X_new)
 ```
     [ 2  2 11  4  5  8  7  6  3  2]
 
-- Multiplying a constant to each element of vector : $$x_{i_{new}} = \displaystyle x_i*c$$
+- Multiplying a constant to each element of vector : $x_{i_{new}} = \displaystyle x_i*c$
 
 
 ```python
 c = 5
-
 X_new = x*c
 print(X_new)
 ```
     [ 0  0 45 10 15 30 25 20  5  0]
 
-- Reverse a vector
+- Reverse a vector : $x_{ij} = x_{ji}$
 
 ```python
 S_new = s[::-1]
@@ -112,7 +111,7 @@ print(S_new)
 
 ### Calculate basic statistical measures
 
-- Mean ($$\mu$$)
+- Mean ($\mu = \frac{1}{N}\displaystyle\sum_{i=1}^{N}{x_i}$)
 
 
 ```python
@@ -122,7 +121,7 @@ x.mean(dtype=np.float32)
 
     475.54001
 
-- Standard deviation ($$\sigma$$)
+- Standard deviation ( $\sigma = \sqrt{\displaystyle\sum_{i=1}^{N}{\frac{(x_i - \mu)^2} {N}}}$ )
 
 
 ```python
@@ -130,7 +129,7 @@ x.std(dtype=np.float32)
 ```
     298.57318
 
-- Variance ($$\sigma^2$$)
+- Variance ($\sigma^2 = \displaystyle\sum_{i=1}^{N}{\frac{(x_i - \mu)^2} {N}}$)
 
 ```python
 x.var(dtype=np.float32)
