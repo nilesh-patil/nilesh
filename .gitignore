@@ -22,3 +22,5 @@ package-lock.json
 # pixi environments
 .pixi
 *.egg-info
+
+*.DS_Store
