@@ -1,6 +1,8 @@
 ---
-title: "Working with numpy"
+title: "Basics of Numerical Computing with Numpy"
 date: 2017-03-04T05:10:55-01:00
+header :
+    overlay_image: "blog/feature/numpy_header.jpeg"
 categories: blog
 excerpt: 'Working with numpy'
 tags: 
@@ -12,17 +14,15 @@ image:
 
 ## Sections
 
-- [Vectors](#vectors)
-  - [Generate a sequence](#create-vectors-by-generating-different-sequence-of-numbers)
-  - [Operations on a single vector](#single-vector-operations)
-  - [Basics](#single-vector-operations)
-  - [Calculate statistical measures](#calculate-basic-statistical-measures)
+- [Sections](#sections)
+  - [Vectors](#vectors)
+  - [Calculate basic statistical measures](#calculate-basic-statistical-measures)
   - [Subset a vector](#subset-a-vector)
-
 - [Matrices](#matrices)
-  - [Generate a matrix](#create-a-matrix)
+  - [Create a matrix](#create-a-matrix)
   - [Matrix operations](#matrix-operations)
   - [Subset a matrix](#subset-a-matrix)
+  - [References](#references)
 
 
  If you don't know, in short - [Numpy](http://www.numpy.org) is a python library which provides support for fast computations over arrays (vectors, matrices, tensors). Its faster compared to structuring the same computation in base python because operations are vectorized & in general you end up writing code that is pretty close to mathematical notation of your operations instead of writing low level code & dealing with errors & overheads that might creep in during these operations.
@@ -296,6 +296,6 @@ x[:,1:3]
 
 ---
 
-### References 
+### References
 
 - [Numpy docs](https://numpy.org/doc/stable/)
